@@ -1,0 +1,37 @@
+@media(max-width:1040px){
+
+input[type="search"]{
+  width: calc(70% - 120px);
+
+
+}
+}
+@media(max-width:768px){
+	#overlay img {
+	margin-top: 300px;
+		width:80%;
+}
+input[type="search"]{
+  width: calc(70% - 120px);
+
+
+}
+
+}
+@media(max-width:360px){
+	#overlay img {
+	margin-top: 75px;
+	width:80%;
+}
+#imageGallery .layout {
+	padding: 5px;
+	margin: 3px;
+}
+.galleryDiv{
+  padding-top: 100px;
+
+}
+input[type="search"]{
+  width: calc(40% + 55px);
+}
+}

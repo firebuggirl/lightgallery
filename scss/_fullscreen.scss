@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+#next, #prev{
+  border: 1px solid black;
+ padding: 20px;
+ display: block;
+ width: 100px;
+ height: 100px;
+ display: flex;
+ font-size: 3em;
+ justify-content: center;
+ align-items: center;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: #222;
+  background: #710000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="search"]{
+  border: 3px solid grey;
+  width: 460px;
+  /*width: calc(30% - 120px);*/
+  height: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+
+
+}
+
+
+
+
+/* Link Styles */
+
+a {
+  text-decoration: none;
+  color: #E73931;
+}
+a:hover {
+  color: #F7C059;
+}
+/*gallery styles*/
+
+
+#imageGallery {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	display: block;
+	max-width: 980px;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+#imageGallery .layout {
+	display: inline-block;
+	/*padding: 4px;*/
+	/*background:white;*/
+	margin: 10px ;
+	/*border: 3px solid white;*/
+}
+#imageGallery .layout img {
+  border: 3px solid white;
+  margin-bottom: 30px;
+}
+
+a {
+	text-decoration: none;
+}
+h1{
+	color: beige;
+	font-family: Poller One;
+}
+#overlay {
+  background:rgba(0,0,0,0.7);
+  width:100%;
+ /* height:100%;*/
+  height: 100vh;
+  position: fixed;
+  top:0;
+  left:0;
+  display:none;
+  text-align:center;
+}
+
+#overlay img {
+ margin-top: 5%;
+ width: 50%;
+ border: 3px solid $beige;
+
+}
+#overlay p {
+ color: $beige;
+ width: 30%;
+ margin: 15px auto;
+
+
+}
+
+
+.galleryDiv{
+  text-align: center;
+  flex: 1;
+  background-size: cover;
+  overflow: hidden;
+  padding-top: 60px;
+}
