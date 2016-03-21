@@ -418,6 +418,28 @@ a:hover {
   border: 3px solid white;
   margin-bottom: 30px; }
 
+#leftArrow {
+  left: 0;
+  float: left;
+  background: url(images/left-arrow.png) left 48% no-repeat;
+  opacity: 0;
+  transition: opacity 0.6s; }
+
+#rightArrow {
+  right: 0;
+  float: right;
+  background: url(images/right-arrow.png) right 48% no-repeat;
+  opacity: 0;
+  transition: opacity 0.6s; }
+
+#closeLightbox {
+  right: 0;
+  top: 0;
+  float: right;
+  background: url(images/close.png) right 48% no-repeat;
+  opacity: 0;
+  transition: opacity 0.6s; }
+
 a {
   text-decoration: none; }
 

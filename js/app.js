@@ -31,6 +31,15 @@ var $index = 0;
 //An image to overlay
 $overlay.append($image);
 
+var $leftArrow = $("<div id='leftArrow'></div>");
+var $rightArrow = $("<div id='rightArrow'></div>");
+var $closeLightbox = $("<div id='closeLightbox'></div><div style='clear:both'></div>");
+
+$image.before($closeLightbox);
+$image.before($leftArrow);
+$image.after($rightArrow);
+
+
 //A caption to overlay
 $overlay.append($caption);
 
