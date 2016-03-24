@@ -7,15 +7,9 @@
  display: block;
  width: 100px;
  height: 100px;
- -webkit-display: flex;
- -ms-display: flex;
  display: flex;
  font-size: 3em;
- -webkit-justify-content: center;
- -ms-justify-content: center;
- -webkit-justify-content: center;
- -ms-align-items: center;
- -webkit-align-items: center;
+ justify-content: center;
  align-items: center;
 }
 
@@ -28,11 +22,7 @@ body {
   color: #222;
   background: #710000;
   min-height: 100vh;
-  -webkit-display: flex;
-  -ms-display: flex;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -43,11 +33,18 @@ input[type="search"]{
   height: 40px;
   margin-top: 40px;
   margin-bottom: 40px;
-
-
+  font-size: 16pt;
+  color:$rose;
 
 }
 
+input[type="search"]:focus{
+  border: 8px solid;
+  color: darken($rose, 30%);
+  border-color: lighten($rose, 20%);
+  background-color: $lightergrey;
+
+}
 
 
 
@@ -70,15 +67,9 @@ a:hover {
 	display: block;
 	max-width: 1040px;
 	text-align: center;
-	-webkit-display: flex;
-  -ms-display: flex;
-  display: flex;
-	-webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-	-webkit-justify-content: space-around;
-  -ms-justify-content: space-around;
-  justify-content: space-around;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 }
 #imageGallery .layout {
 	display: inline-block;
@@ -92,29 +83,63 @@ a:hover {
   margin-bottom: 30px;
 }
 
-#leftArrow{
-  left: 0;
-  float: left;
-  background: url(images/left-arrow.png) left 48% no-repeat;
-  opacity: 0;
-  transition: opacity 0.6s;
+
+#leftArrow {
+	/* width: 34%; */
+	float: left;
+	background: url(images/left-arrow.png) left 48% no-repeat;
+	content: "";
+	height: 100px;
+	width: 100px;
+	margin-top: 25.5%;
+	position: absolute;
+	margin-left: 222px;
 }
-#rightArrow{
-  right: 0;
-  float: right;
+/*#rightArrow{
+  /*width: 34%;*/
+  /*float: right;
+  content: "";
+	height: 100px;
+	width: 100px;
+  margin-top: 180px;
+	position: absolute;
   background: url(images/right-arrow.png) right 48% no-repeat;
-  opacity: 0;
-  transition: opacity 0.6s;
+  margin-right: 170px;
+}*/
+#rightArrow {
+	/* width: 34%; */
+	content: "";
+	height: 100px;
+	width: 500px;
+	margin-top: -200px;
+	position: relative;
+	background: url(images/right-arrow.png) right 48% no-repeat;
+}
+#rightArrow {
+	/* width: 34%; */
+	/*float: left;*/
+	content: "";
+	height: 100px;
+	width: 100px;
+	/*margin-top: -260px;*/
+	position: absolute;
+	background: url(images/right-arrow.png) right 48% no-repeat;
+	margin-left: 950px;
 }
 
-#closeLightbox{
-  right: 0;
-  top: 0;
-  float: right;
-  background: url(images/close.png) right 48% no-repeat;
-  opacity: 0;
-  transition: opacity 0.6s;
+
+#closeLightbox {
+	/* width: 34%; */
+	right: 0;
+	top: 0;
+	background: url(images/close.png) right 48% no-repeat;
+	content: "";
+	height: 100px;
+	width: 500px;
+	position: absolute;
+	margin-right: 40px;
 }
+
 
 a {
 	text-decoration: none;
@@ -136,9 +161,10 @@ h1{
 }
 
 #overlay img {
- margin-top: 5%;
+ margin-top: 10%;
  width: 50%;
  border: 3px solid $beige;
+
 
 }
 #overlay p {
@@ -152,8 +178,6 @@ h1{
 
 .galleryDiv{
   text-align: center;
-  -webkit-flex: 1;
-  -ms-flex: 1;
   flex: 1;
   background-size: cover;
   overflow: hidden;
