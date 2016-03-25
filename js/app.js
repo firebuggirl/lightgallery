@@ -33,15 +33,6 @@ var $index = 0;
 //An image to overlay
 $overlay.append($image);
 
-var $leftArrow = $("<div id='leftArrow'></div>");
-var $rightArrow = $("<div id='rightArrow'></div><div style='clear:left'></div>");
-var $closeLightbox = $("<div id='closeLightbox'></div><div style='clear:both'></div>");
-
-$image.before($closeLightbox);
-$image.before($leftArrow);
-$image.after($rightArrow);
-
-
 
 //A caption to overlay
 $overlay.append($caption);
@@ -76,7 +67,15 @@ $overlay.click(function(){
   $overlay.hide();
 });
 
-//Next and previous images
+//Next and previous arrow images
+var $leftArrow = $("<div id='leftArrow'></div>");
+var $rightArrow = $("<div id='rightArrow'></div><div style='clear:left'></div>");
+var $closeLightbox = $("<div id='closeLightbox'></div><div style='clear:both'></div>");
+
+$image.before($closeLightbox);
+$image.before($leftArrow);
+$image.after($rightArrow);
+
 $('#rightArrow').click(function(){
   var imageNext = $("#imageGallery a").attr("href").next("href");
   var imagePrev = $("#imageGallery a").attr("href").prev("href");
