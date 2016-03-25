@@ -433,9 +433,9 @@ a:hover {
   content: "";
   height: 100px;
   width: 100px;
-  margin-top: 25.5%;
+  margin-top: 23%;
   position: absolute;
-  margin-left: 222px; }
+  margin-left: 13%; }
 
 /*#rightArrow{
   /*width: 34%;*/
@@ -453,7 +453,7 @@ a:hover {
   content: "";
   height: 100px;
   width: 500px;
-  margin-top: -200px;
+  margin-top: -18%;
   position: relative;
   background: url(images/right-arrow.png) right 48% no-repeat; }
 
@@ -466,7 +466,7 @@ a:hover {
   /*margin-top: -260px;*/
   position: absolute;
   background: url(images/right-arrow.png) right 48% no-repeat;
-  margin-left: 950px; }
+  margin-left: 80%; }
 
 #closeLightbox {
   /* width: 34%; */
@@ -523,11 +523,30 @@ h1 {
     width: 80%; }
 
   input[type="search"] {
-    width: calc(70% - 120px); } }
+    width: calc(70% - 120px); }
+
+  #leftArrow {
+    margin-left: 2%;
+    margin-top: 56.5%; }
+
+  #rightArrow {
+    margin-left: 84%;
+    margin-top: -32%; } }
 @media (max-width: 360px) {
   #overlay img {
-    margin-top: 75px;
-    width: 80%; }
+    margin-top: 175px;
+    width: 70%; }
+
+  #rightArrow {
+    margin-left: 70.5%;
+    margin-top: -35%; }
+
+  #leftArrow {
+    margin-top: 59.3%;
+    margin-left: .5%; }
+
+  #closeLightbox {
+    margin-right: 9px; }
 
   #imageGallery .layout {
     padding: 5px;
@@ -537,6 +556,13 @@ h1 {
     padding-top: 100px; }
 
   input[type="search"] {
-    width: calc(40% + 55px); } }
+    width: calc(40% + 55px); }
+
+  #overlay p {
+    width: 70%; } }
+@media (max-width: 320px) {
+  #rightArrow {
+    margin-top: -129px;
+    margin-left: 68%; } }
 
 /*# sourceMappingURL=main.css.map */

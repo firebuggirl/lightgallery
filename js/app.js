@@ -1,4 +1,6 @@
 
+
+
 $("#search").keyup(function() {
     var search = $(this).val();
     console.log(search);
@@ -32,7 +34,7 @@ var $index = 0;
 $overlay.append($image);
 
 var $leftArrow = $("<div id='leftArrow'></div>");
-var $rightArrow = $("<div id='rightArrow'></div>");
+var $rightArrow = $("<div id='rightArrow'></div><div style='clear:left'></div>");
 var $closeLightbox = $("<div id='closeLightbox'></div><div style='clear:both'></div>");
 
 $image.before($closeLightbox);
@@ -40,10 +42,9 @@ $image.before($leftArrow);
 $image.after($rightArrow);
 
 
+
 //A caption to overlay
 $overlay.append($caption);
-
-
 
 
 
@@ -73,4 +74,39 @@ $("#imageGallery a").click(function(event){
 $overlay.click(function(){
   //Hide the overlay
   $overlay.hide();
+});
+
+//Next and previouse images
+$('#rightArrow').click(function(){
+  var imageNext = $("#imageGallery a").attr("href").next("href");
+  var imagePrev = $("#imageGallery a").attr("href").prev("href");
+$(this).append(imageNext);
+});
+$('#leftArrow').click(function(){
+  var imageNext = $("#imageGallery a").attr("href").prev("href");
+$(this).append(imagePrev);
+});
+
+//Keybaord navigation
+$(document).ready(function() {
+    $(document).keydown(function(key) {
+        switch(parseInt(key.which,10)) {
+			// Left arrow key pressed
+			case 37:
+				$('imageGallery a').attr('href').prev();
+				break;
+			// Up Arrow Pressed
+			case 38:
+				$('imageGallery a').attr('href').prev();
+				break;
+			// Right Arrow Pressed
+			case 39:
+				$('imageGallery a').attr('href').next();
+				break;
+			// Down Arrow Pressed
+			case 40:
+				$('imageGallery a').attr('href').next();
+				break;
+      	}
+	});
 });

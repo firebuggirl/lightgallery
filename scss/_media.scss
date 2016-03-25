@@ -6,6 +6,8 @@ input[type="search"]{
 
 }
 }
+
+
 @media(max-width:768px){
 	#overlay img {
 	margin-top: 300px;
@@ -14,14 +16,33 @@ input[type="search"]{
 input[type="search"]{
   width: calc(70% - 120px);
 
+}
 
+#leftArrow{
+  margin-left: 2%;
+  margin-top: 56.5%;
+}
+#rightArrow{
+  margin-left: 84%;
+  margin-top: -32%;
 }
 
 }
 @media(max-width:360px){
 	#overlay img {
-	margin-top: 75px;
-	width:80%;
+	margin-top: 175px;
+	width:70%;
+}
+#rightArrow{
+  margin-left: 70.5%;
+  margin-top: -35%;
+}
+#leftArrow{
+  margin-top: 59.3%;
+  margin-left: .5%;
+}
+#closeLightbox{
+  margin-right: 9px;
 }
 #imageGallery .layout {
 	padding: 5px;
@@ -33,5 +54,15 @@ input[type="search"]{
 }
 input[type="search"]{
   width: calc(40% + 55px);
+}
+
+#overlay p{
+  width: 70%;
+}
+}
+@media(max-width: 320px){
+  #rightArrow {
+	margin-top: -129px;
+	margin-left: 68%;
 }
 }
