@@ -28,6 +28,13 @@ input[type="search"]{
 }
 
 }
+/*iPhone 6 Plus*/
+@media (max-width:414px){
+  input[type="search"]{
+    width: calc(70% - 80px);
+  }
+}
+
 @media(max-width:360px){
 	#overlay img {
 	margin-top: 175px;
@@ -53,7 +60,7 @@ input[type="search"]{
 
 }
 input[type="search"]{
-  width: calc(40% + 55px);
+  width: calc(40% + 65px);
 }
 
 #overlay p{

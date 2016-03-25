@@ -532,6 +532,10 @@ h1 {
   #rightArrow {
     margin-left: 84%;
     margin-top: -32%; } }
+/*iPhone 6 Plus*/
+@media (max-width: 414px) {
+  input[type="search"] {
+    width: calc(70% - 80px); } }
 @media (max-width: 360px) {
   #overlay img {
     margin-top: 175px;
@@ -556,7 +560,7 @@ h1 {
     padding-top: 100px; }
 
   input[type="search"] {
-    width: calc(40% + 55px); }
+    width: calc(40% + 65px); }
 
   #overlay p {
     width: 70%; } }

@@ -76,7 +76,7 @@ $overlay.click(function(){
   $overlay.hide();
 });
 
-//Next and previouse images
+//Next and previous images
 $('#rightArrow').click(function(){
   var imageNext = $("#imageGallery a").attr("href").next("href");
   var imagePrev = $("#imageGallery a").attr("href").prev("href");
