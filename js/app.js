@@ -77,13 +77,17 @@ $image.before($leftArrow);
 $image.after($rightArrow);
 
 $('#rightArrow').click(function(){
-  var imageNext = $("#imageGallery a").attr("href").next("href");
-  var imagePrev = $("#imageGallery a").attr("href").prev("href");
-$(this).append(imageNext);
+  //.next() can only select elements, no attributes
+  var imageNext = $("#imageGallery a").next();
+  console.log(imageNext);
+  $(this).append(imageNext);
 });
+
 $('#leftArrow').click(function(){
-  var imageNext = $("#imageGallery a").attr("href").prev("href");
-$(this).append(imagePrev);
+    //.prev() can only select elements, no attributes
+  var imagePrev = $("#imageGallery a").prev();
+  console.log(imagePrev);
+  $(this).append(imagePrev);
 });
 
 //Keybaord navigation
