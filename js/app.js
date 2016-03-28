@@ -112,7 +112,7 @@ $('#rightArrow').click(function(){
   //.next() can only select elements, no attributes
   var $activeImg = $(".selected"); //global variable for current img
   var $imageNext = $activeImg.parent().next().children().attr("href");
-  $image.attr("src", $newPhoto);
+  $image.attr("src", $activeImg);
   $captionText = $activeImg.parent().next().children("img").attr("alt");
   $caption.text($captionText);
   $activePhoto = $activeImg.next();
@@ -123,9 +123,9 @@ $('#rightArrow').click(function(){
 
 $('#leftArrow').click(function(){
     //.prev() can only select elements, no attributes
-    var $activeImg = $(".selected"); //global variable for current img
+  var $activeImg = $(".selected"); //global variable for current img
   var $imagePrev = $activeImg.parent().prev().children().attr("href");
-  $image.attr("src", $newPhoto);
+  $image.attr("src", $activeImg);
   $captionText = $activeImg.parent().prev().children("img").attr("alt");
   $caption.text($captionText);
   $activePhoto = $activeImg.prev();
