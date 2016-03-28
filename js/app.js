@@ -55,7 +55,7 @@ $("body").append($overlay);
 $("#imageGallery a").click(function(event){
   event.preventDefault();
   //get the href of the image we will display in the lightbox from the link that was clicked
-  var imageLocation = $(this).attr("href");
+  var imageLocation = $(this).attr("href").addClass("selected");
   //Update overlay with the image linked in the link
   $image.attr("src", imageLocation);
 
@@ -105,28 +105,30 @@ $image.before($closeLightbox);
 //$image.after($leftArrow);
 //$image.after($rightArrow);
 
-var $activeImg; //global variable for current img
+var $activeImg = $(".selected"); //global variable for current img
 var $captionText; //new code
 
 $('#rightArrow').click(function(){
   //.next() can only select elements, no attributes
-  var $imageNext = $activeImg.parent().next().childeren().attr("href");
+  var $imageNext = $activeImg.parent().next().children().attr("href");
   $image.attr("src", $newPhoto);
   $captionText = $activeImg.parent().next().children("img").attr("alt");
   $caption.text($captionText);
   $activePhoto = $activeImg.next();
   console.log(imageNext);
+  console.log(activeImg);
   $(this).append(imageNext);
 });
 
 $('#leftArrow').click(function(){
     //.prev() can only select elements, no attributes
-  var $imageNext = $activeImg.parent().prev().children().attr("href");
+  var $imagePrev = $activeImg.parent().prev().children().attr("href");
   $image.attr("src", $newPhoto);
   $captionText = $activeImg.parent().prev().children("img").attr("alt");
   $caption.text($captionText);
   $activePhoto = $activeImg.prev();
   console.log(imagePrev);
+  console.log(activeImg);
   $(this).append(imagePrev);
 });
 
