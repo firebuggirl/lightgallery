@@ -355,19 +355,61 @@ th {
   padding: 0; }
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
 
-#next, #prev {
-  border: 1px solid black;
-  padding: 20px;
-  display: block;
-  width: 100px;
-  height: 100px;
+#top {
+  text-align: center;
+  padding: 25px;
+  background: #710000;
+  position: fixed;
+  width: 100%;
   display: flex;
-  font-size: 3em;
+  -webkit-display: flex;
+  -moz-display: flex;
   justify-content: center;
-  align-items: center; }
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  /*z-index: 1;*/ }
 
+.arrows {
+  width: 100%;
+  z-index: 60;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  /*background: url(images/left-arrow.png) left 48% no-repeat;
+  background: url(images/right-arrow.png) right 48% no-repeat;*/
+  top: 50%; }
+
+#leftArrow {
+  margin-left: -10%; }
+
+#rightArrow {
+  margin-right: -10%; }
+
+/*#leftArrow {
+	/* width: 34%; */
+/*float: left;*/
+	/*background: url(images/left-arrow.png) left 48% no-repeat;
+  z-index: 50;
+  margin-top: 400px;
+  margin-right: 160px;
+	/*position: absolute;
+	margin-left: 13%;*/
+/*}*/
+/*#rightArrow {*/
+/* width: 34%; */
+/* float: left; */
+/* margin-top: -260px; */
+/*	position: absolute;
+	background: url(images/right-arrow.png) right 48% no-repeat;
+	margin-top: 400px;
+  margin-left: -40px;
+	z-index: 50;
+}*/
 body {
   margin: 0;
   padding: 0;
@@ -426,48 +468,6 @@ a:hover {
   border: 3px solid white;
   margin-bottom: 30px; }
 
-#leftArrow {
-  /* width: 34%; */
-  float: left;
-  background: url(images/left-arrow.png) left 48% no-repeat;
-  content: "";
-  height: 100px;
-  width: 100px;
-  margin-top: 23%;
-  position: absolute;
-  margin-left: 13%; }
-
-/*#rightArrow{
-  /*width: 34%;*/
-  /*float: right;
-  content: "";
-	height: 100px;
-	width: 100px;
-  margin-top: 180px;
-	position: absolute;
-  background: url(images/right-arrow.png) right 48% no-repeat;
-  margin-right: 170px;
-}*/
-#rightArrow {
-  /* width: 34%; */
-  content: "";
-  height: 100px;
-  width: 500px;
-  margin-top: -18%;
-  position: relative;
-  background: url(images/right-arrow.png) right 48% no-repeat; }
-
-#rightArrow {
-  /* width: 34%; */
-  /*float: left;*/
-  content: "";
-  height: 100px;
-  width: 100px;
-  /*margin-top: -260px;*/
-  position: absolute;
-  background: url(images/right-arrow.png) right 48% no-repeat;
-  margin-left: 80%; }
-
 #closeLightbox {
   /* width: 34%; */
   right: 0;
@@ -512,45 +512,40 @@ h1 {
   flex: 1;
   background-size: cover;
   overflow: hidden;
-  padding-top: 60px; }
+  padding-top: 20px;
+  margin-top: 150px; }
 
 @media (max-width: 1040px) {
   input[type="search"] {
     width: calc(70% - 120px); } }
 @media (max-width: 768px) {
   #overlay img {
-    margin-top: 300px;
-    width: 80%; }
+    width: 50%;
+    margin-top: 40%; }
+
+  .arrows {
+    top: 40%; }
 
   input[type="search"] {
-    width: calc(70% - 120px); }
-
-  #leftArrow {
-    margin-left: 2%;
-    margin-top: 56.5%; }
-
-  #rightArrow {
-    margin-left: 84%;
-    margin-top: -32%; } }
+    width: calc(70% - 120px); } }
 /*iPhone 6 Plus*/
 @media (max-width: 414px) {
   input[type="search"] {
     width: calc(70% - 80px); } }
+/*iPhone 6*/
+@media (max-width: 375px) {
+  .arrows {
+    top: 28%; } }
 @media (max-width: 360px) {
   #overlay img {
-    margin-top: 175px;
-    width: 70%; }
+    width: 70%;
+    margin-top: 70%; }
 
-  #rightArrow {
-    margin-left: 70.5%;
-    margin-top: -35%; }
-
-  #leftArrow {
-    margin-top: 59.3%;
-    margin-left: .5%; }
+  .arrows {
+    top: 28%; }
 
   #closeLightbox {
-    margin-right: 9px; }
+    margin-right: -15%; }
 
   #imageGallery .layout {
     padding: 5px;
@@ -565,8 +560,14 @@ h1 {
   #overlay p {
     width: 70%; } }
 @media (max-width: 320px) {
-  #rightArrow {
-    margin-top: -129px;
-    margin-left: 68%; } }
+  /*#rightArrow {
+	margin-top: -129px;
+	margin-left: 68%;
+}*/
+  #overlay img {
+    margin-top: 60%; }
+
+  .arrows {
+    top: 43%; } }
 
 /*# sourceMappingURL=main.css.map */

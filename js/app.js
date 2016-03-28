@@ -15,12 +15,20 @@ $("#search").keyup(function() {
     });
 });
 
+//hide arrows on page load
+$(document).ready(function(){
+ $(".arrows").hide();
+});
 //Problem: User when clicking on image goes to a dead end
 //Solution: Create an overlay with the large image - Lightbox
 
 var $overlay = $('<div id="overlay"></div>');
 var $image = $("<img>");
 var $caption = $("<p></p>");
+//var $arrows = $(".arrows");
+
+
+
 
 
 //Keep track of image index for prev/next, we will use a list index
@@ -37,6 +45,7 @@ $overlay.append($image);
 //A caption to overlay
 $overlay.append($caption);
 
+//$overlay.append($arrows);
 
 
 //Add overlay
@@ -54,38 +63,69 @@ $("#imageGallery a").click(function(event){
   //Show the overlay.
   $overlay.show();
 
+  //show arrows
+  $(".arrows").show();
 
+
+  //Hide fixed scroll bar with z-index that was previously getting in the way of te close button
+  $("#top").hide();
+
+  $("#leftArrow").show();
+
+  $("#rightArrow").show();
 
   //Get child's alt attribute and set caption
   var captionText = $(this).children("img").attr("alt");
   $caption.text(captionText);
 });
 
+
+
 //When overlay is clicked
 $overlay.click(function(){
   //Hide the overlay
   $overlay.hide();
+
+//Show fixed scroll bar with z-index
+  $("#top").show();
+
+  $(".arrows").hide();
+
+  //$("#leftArrow").hide();
+
+//  $("#rightArrow").hide();
 });
 
 //Next and previous arrow images
-var $leftArrow = $("<div id='leftArrow'></div>");
-var $rightArrow = $("<div id='rightArrow'></div><div style='clear:left'></div>");
-var $closeLightbox = $("<div id='closeLightbox'></div><div style='clear:both'></div>");
+//var $leftArrow = $("#leftArrow");
+//var $rightArrow = $("#rightArrow");
+var $closeLightbox = $("<div id='closeLightbox'></div>");
 
 $image.before($closeLightbox);
-$image.before($leftArrow);
-$image.after($rightArrow);
+//$image.after($leftArrow);
+//$image.after($rightArrow);
+
+var $activeImg; //global variable for current img
+var $captionText; //new code
 
 $('#rightArrow').click(function(){
   //.next() can only select elements, no attributes
-  var imageNext = $("#imageGallery a").next();
+  var $imageNext = $activeImg.parent().next().childeren().attr("href");
+  $image.attr("src", $newPhoto);
+  $captionText = $activeImg.parent().next().children("img").attr("alt");
+  $caption.text($captionText);
+  $activePhoto = $activeImg.next();
   console.log(imageNext);
   $(this).append(imageNext);
 });
 
 $('#leftArrow').click(function(){
     //.prev() can only select elements, no attributes
-  var imagePrev = $("#imageGallery a").prev();
+  var $imageNext = $activeImg.parent().prev().children().attr("href");
+  $image.attr("src", $newPhoto);
+  $captionText = $activeImg.parent().prev().children("img").attr("alt");
+  $caption.text($captionText);
+  $activePhoto = $activeImg.prev();
   console.log(imagePrev);
   $(this).append(imagePrev);
 });
@@ -96,19 +136,19 @@ $(document).ready(function() {
         switch(parseInt(key.which,10)) {
 			// Left arrow key pressed
 			case 37:
-				$('imageGallery a').attr('href').prev();
+				 $activeImg.parent().prev().children().attr("href");
 				break;
 			// Up Arrow Pressed
 			case 38:
-				$('imageGallery a').attr('href').prev();
+				 $activeImg.parent().prev().children().attr("href");
 				break;
 			// Right Arrow Pressed
 			case 39:
-				$('imageGallery a').attr('href').next();
+				 $activeImg.parent().next().children().attr("href");
 				break;
 			// Down Arrow Pressed
 			case 40:
-				$('imageGallery a').attr('href').next();
+				 $activeImg.parent().prev().children().attr("href");
 				break;
       	}
 	});

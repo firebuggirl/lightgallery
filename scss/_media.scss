@@ -9,23 +9,19 @@ input[type="search"]{
 
 
 @media(max-width:768px){
-	#overlay img {
-	margin-top: 300px;
-		width:80%;
+
+#overlay img {
+	width: 50%;
+	margin-top: 40%;
+}
+.arrows{
+  top: 40%;
 }
 input[type="search"]{
   width: calc(70% - 120px);
 
 }
 
-#leftArrow{
-  margin-left: 2%;
-  margin-top: 56.5%;
-}
-#rightArrow{
-  margin-left: 84%;
-  margin-top: -32%;
-}
 
 }
 /*iPhone 6 Plus*/
@@ -34,23 +30,25 @@ input[type="search"]{
     width: calc(70% - 80px);
   }
 }
-
+/*iPhone 6*/
+@media (max-width: 375px){
+  .arrows{
+    top: 28%;
+  }
+}
 @media(max-width:360px){
 	#overlay img {
-	margin-top: 175px;
 	width:70%;
+  margin-top: 70%;
 }
-#rightArrow{
-  margin-left: 70.5%;
-  margin-top: -35%;
+.arrows{
+  top: 28%;
 }
-#leftArrow{
-  margin-top: 59.3%;
-  margin-left: .5%;
-}
+
 #closeLightbox{
-  margin-right: 9px;
+  margin-right: -15%;
 }
+
 #imageGallery .layout {
 	padding: 5px;
 	margin: 3px;
@@ -68,8 +66,14 @@ input[type="search"]{
 }
 }
 @media(max-width: 320px){
-  #rightArrow {
+  /*#rightArrow {
 	margin-top: -129px;
 	margin-left: 68%;
+}*/
+#overlay img{
+  margin-top: 60%;
+}
+.arrows{
+  top: 43%;
 }
 }
