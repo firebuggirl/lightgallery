@@ -111,27 +111,27 @@ var $captionText; //new code
 $('#rightArrow').click(function(){
   //.next() can only select elements, no attributes
   var $activeImg = $(".selected"); //global variable for current img
-  var $imageNext = $activeImg.parent().next().children().attr("href");
-  $image.attr("src", $activeImg);
-  $captionText = $activeImg.parent().next().children("img").attr("alt");
-  $caption.text($captionText);
-  $activePhoto = $activeImg.next();
+  var $imageNext = $activeImg.parent().next().children().attr("href");//get parent of current img, which is <li>, then get next <li>, then get child href
+  $image.attr("src", $imageNext);//change location of "src" to be equal to next image
+  $captionText = $activeImg.parent().next().children("img").attr("alt");//get parent of current img, which is <li>, then get next <li>, then get child image attribute/alt text
+  $caption.text($captionText);//get caption text of prev image
+  $activePhoto = $activeImg.next();//get next image
   console.log(imageNext);
   console.log(activeImg);
-  $(this).append(imageNext);
+
 });
 
 $('#leftArrow').click(function(){
     //.prev() can only select elements, no attributes
-  var $activeImg = $(".selected"); //global variable for current img
-  var $imagePrev = $activeImg.parent().prev().children().attr("href");
-  $image.attr("src", $activeImg);
-  $captionText = $activeImg.parent().prev().children("img").attr("alt");
-  $caption.text($captionText);
-  $activePhoto = $activeImg.prev();
+  var $activeImg = $(".selected"); //current img w/selected class
+  var $imagePrev = $activeImg.parent().prev().children().attr("href");//get parent of current img, which is <li>, then get prev <li>, then get child href
+  $image.attr("src", $imagePrev);//change location of "src" to be equal to previous image
+  $captionText = $activeImg.parent().prev().children("img").attr("alt");//get parent of current img, which is <li>, then get prev <li>, then get child image attribute/alt text
+  $caption.text($captionText);//get caption text of prev image
+  $activePhoto = $activeImg.prev();//get previous image
   console.log(imagePrev);
   console.log(activeImg);
-  $(this).append(imagePrev);
+
 });
 
 //Keybaord navigation
