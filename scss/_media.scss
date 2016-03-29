@@ -12,7 +12,7 @@ input[type="search"]{
 
 #overlay img {
 	width: 50%;
-	margin-top: 40%;
+	/*margin-top: 28%;*/
 }
 .arrows{
   top: 40%;
@@ -39,7 +39,7 @@ input[type="search"]{
 @media(max-width:360px){
 	#overlay img {
 	width:70%;
-  margin-top: 70%;
+  margin-top: 48%;
 }
 .arrows{
   top: 28%;
@@ -65,13 +65,13 @@ input[type="search"]{
   width: 70%;
 }
 }
-@media(max-width: 320px){
+@media(min-width: 320px){
   /*#rightArrow {
 	margin-top: -129px;
 	margin-left: 68%;
 }*/
 #overlay img{
-  margin-top: 60%;
+  /*margin-top: 53%;*/
 }
 .arrows{
   top: 43%;

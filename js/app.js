@@ -63,7 +63,7 @@ $("#imageGallery a").click(function(event){
   //Show the overlay.
   $overlay.show();
 
-  //show arrows
+  //show arrows div
   $(".arrows").show();
 
 
@@ -110,12 +110,12 @@ var $captionText; //new code
 
 $('#rightArrow').click(function(){
   //.next() can only select elements, no attributes
-  var $activeImg = $(".selected"); //global variable for current img
+  var $activeImg = $(".selected"); // variable for current/selected img
   var $imageNext = $activeImg.parent().next().children().attr("href");//get parent of current img, which is <li>, then get next <li>, then get child href
   $image.attr("src", $imageNext);//change location of "src" to be equal to next image
-  $captionText = $activeImg.parent().next().children("img").attr("alt");//get parent of current img, which is <li>, then get next <li>, then get child image attribute/alt text
+  $captionText = $imageNext.children("img").attr("alt");//get parent of current img, which is <li>, then get next <li>, then get child image attribute/alt text
   $caption.text($captionText);//get caption text of prev image
-  $activePhoto = $activeImg.next();//get next image
+  //$activeImg = $activeImg.next();//get next image
   console.log(imageNext);
   console.log(activeImg);
 
@@ -128,7 +128,7 @@ $('#leftArrow').click(function(){
   $image.attr("src", $imagePrev);//change location of "src" to be equal to previous image
   $captionText = $activeImg.parent().prev().children("img").attr("alt");//get parent of current img, which is <li>, then get prev <li>, then get child image attribute/alt text
   $caption.text($captionText);//get caption text of prev image
-  $activePhoto = $activeImg.prev();//get previous image
+  //$activePhoto = $activeImg.prev();//get previous image
   console.log(imagePrev);
   console.log(activeImg);
 
@@ -137,6 +137,7 @@ $('#leftArrow').click(function(){
 //Keybaord navigation
 $(document).ready(function() {
     $(document).keydown(function(key) {
+      var $activeImg = $(".selected");
         switch(parseInt(key.which,10)) {
 			// Left arrow key pressed
 			case 37:
