@@ -523,13 +523,19 @@ h1 {
 @media (max-width: 1040px) {
   input[type="search"] {
     width: calc(70% - 120px); } }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   #overlay img {
     width: 50%;
     /*margin-top: 28%;*/ }
 
   .arrows {
     top: 40%; }
+
+  .leftArrow {
+    margin-left: -25%; }
+
+  .rightArrow {
+    margin-right: -25%; }
 
   input[type="search"] {
     width: calc(70% - 120px); } }
@@ -541,13 +547,21 @@ h1 {
 @media (max-width: 375px) {
   .arrows {
     top: 28%; } }
-@media (max-width: 360px) {
+@media (min-width: 360px) {
   #overlay img {
     width: 70%;
     margin-top: 48%; }
 
   .arrows {
     top: 28%; }
+
+  .leftArrow {
+    height: 50px;
+    width: 50px; }
+
+  .rightArrow {
+    height: 50px;
+    width: 50px; }
 
   #closeLightbox {
     margin-right: -15%; }
@@ -573,6 +587,14 @@ h1 {
     /*margin-top: 53%;*/ }
 
   .arrows {
-    top: 43%; } }
+    top: 43%; }
+
+  .leftArrow {
+    height: 45px;
+    width: 45px; }
+
+  .rightArrow {
+    height: 45px;
+    width: 45px; } }
 
 /*# sourceMappingURL=main.css.map */
