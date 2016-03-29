@@ -385,10 +385,14 @@ th {
   top: 50%; }
 
 #leftArrow {
-  margin-left: -10%; }
+  margin-left: -10%;
+  background-color: #ECDDBE;
+  border-radius: 50%; }
 
 #rightArrow {
-  margin-right: -10%; }
+  margin-right: -10%;
+  background-color: #ECDDBE;
+  border-radius: 50%; }
 
 /*#leftArrow {
 	/* width: 34%; */
