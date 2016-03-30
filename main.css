@@ -394,26 +394,6 @@ th {
   background-color: #ECDDBE;
   border-radius: 50%; }
 
-/*#leftArrow {
-	/* width: 34%; */
-/*float: left;*/
-	/*background: url(images/left-arrow.png) left 48% no-repeat;
-  z-index: 50;
-  margin-top: 400px;
-  margin-right: 160px;
-	/*position: absolute;
-	margin-left: 13%;*/
-/*}*/
-/*#rightArrow {*/
-/* width: 34%; */
-/* float: left; */
-/* margin-top: -260px; */
-/*	position: absolute;
-	background: url(images/right-arrow.png) right 48% no-repeat;
-	margin-top: 400px;
-  margin-left: -40px;
-	z-index: 50;
-}*/
 body {
   margin: 0;
   padding: 0;
@@ -428,7 +408,6 @@ body {
 input[type="search"] {
   border: 3px solid grey;
   width: 460px;
-  /*width: calc(30% - 120px);*/
   height: 40px;
   margin-top: 40px;
   margin-bottom: 40px;
@@ -463,10 +442,7 @@ a:hover {
 
 #imageGallery .layout {
   display: inline-block;
-  /*padding: 4px;*/
-  /*background:white;*/
-  margin: 10px;
-  /*border: 3px solid white;*/ }
+  margin: 10px; }
 
 #imageGallery .layout img {
   border: 3px solid white;
@@ -495,7 +471,6 @@ a:hover {
   transform: scale3d(1.1, 1.1, 1.1); }
 
 #closeLightbox {
-  /* width: 34%; */
   right: 0;
   top: 0;
   background: url(images/close.png) right 48% no-repeat;
@@ -515,7 +490,6 @@ h1 {
 #overlay {
   background: rgba(0, 0, 0, 0.7);
   width: 100%;
-  /* height:100%;*/
   height: 100vh;
   position: fixed;
   top: 0;
@@ -548,11 +522,9 @@ h1 {
 @media (max-width: 768px) {
   #overlay img {
     width: 50%;
-    /*margin-top: 28%;*/
     margin-top: calc(15% + 30px); }
 
   .arrows {
-    /*top: 40%;*/
     margin-top: calc(28% + 30px); }
 
   .leftArrow {
@@ -568,17 +540,12 @@ h1 {
   input[type="search"] {
     width: calc(70% - 80px); } }
 /*iPhone 6*/
-@media (max-width: 375px) {
-  .arrows {
-    /*top: 28%;*/ } }
 @media (max-width: 360px) {
   #overlay img {
     width: 70%;
-    /*margin-top: 48%;*/
     margin-top: calc(65% + 30px); }
 
   .arrows {
-    /*top: 28%;*/
     margin-top: calc(78% + 30px); }
 
   .leftArrow {
@@ -589,9 +556,6 @@ h1 {
     height: 50px;
     width: 50px; }
 
-  /*#closeLightbox{
-    margin-right: -15%;
-  }*/
   #imageGallery .layout {
     padding: 5px;
     margin: 3px; }
@@ -605,16 +569,10 @@ h1 {
   #overlay p {
     width: 70%; } }
 @media (max-width: 320px) {
-  /*#rightArrow {
-	margin-top: -129px;
-	margin-left: 68%;
-}*/
   #overlay img {
-    /*margin-top: 53%;*/
     margin-top: calc(65% + 30px); }
 
   .arrows {
-    /*top: 43%;*/
     margin-top: calc(78% + 30px); }
 
   .leftArrow {
