@@ -121,7 +121,7 @@ $("#top").click(function(){
 $('#rightArrow').click(function(){
   //.next() can only select elements, no attributes
   var $activeImg = $(".selected"); // variable for current/selected img
-  var $captionText =$(".selected").children("img").attr("alt");;
+  var $captionText =$(".selected").children("img").attr("alt");
   var $imageNext = $activeImg.parent().next().children().attr("href");//get parent of current img, which is <li>, then get next <li>, then get child href
   //var $captionNext = $captionText.parent().next().children().attr("alt");
   $image.attr("src", $imageNext);//change location of "src" to be equal to next image
