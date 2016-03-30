@@ -26,6 +26,7 @@ var $overlay = $('<div id="overlay"></div>');
 var $image = $("<img>");
 var $caption = $("<p></p>");
 //var $arrows = $(".arrows");
+//var $iframe = $("<iframe></iframe");
 
 
 
@@ -46,6 +47,10 @@ $overlay.append($image);
 $overlay.append($caption);
 
 //$overlay.append($arrows);
+
+//$overlay.append($iframe);
+
+
 
 
 //Add overlay
@@ -104,6 +109,11 @@ var $closeLightbox = $("<div id='closeLightbox'></div>");
 $image.before($closeLightbox);
 //$image.after($leftArrow);
 //$image.after($rightArrow);
+
+$("#top").click(function(){
+
+  $overlay.hide();
+});
 
 
 var $captionText; //new code
