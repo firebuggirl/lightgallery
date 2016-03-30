@@ -8,7 +8,7 @@ input[type="search"]{
 }
 
 
-@media(min-width:768px){
+@media(max-width:768px){
 
 #overlay img {
 	width: 50%;
@@ -42,7 +42,7 @@ input[type="search"]{
     top: 28%;
   }
 }
-@media(min-width:360px){
+@media(max-width:360px){
 	#overlay img {
 	width:70%;
   margin-top: 48%;
@@ -59,9 +59,9 @@ input[type="search"]{
   width: 50px;
 }
 
-#closeLightbox{
+/*#closeLightbox{
   margin-right: -15%;
-}
+}*/
 
 #imageGallery .layout {
 	padding: 5px;
@@ -79,7 +79,7 @@ input[type="search"]{
   width: 70%;
 }
 }
-@media(min-width: 320px){
+@media(max-width: 320px){
   /*#rightArrow {
 	margin-top: -129px;
 	margin-left: 68%;

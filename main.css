@@ -523,7 +523,7 @@ h1 {
 @media (max-width: 1040px) {
   input[type="search"] {
     width: calc(70% - 120px); } }
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   #overlay img {
     width: 50%;
     /*margin-top: 28%;*/ }
@@ -547,7 +547,7 @@ h1 {
 @media (max-width: 375px) {
   .arrows {
     top: 28%; } }
-@media (min-width: 360px) {
+@media (max-width: 360px) {
   #overlay img {
     width: 70%;
     margin-top: 48%; }
@@ -563,9 +563,9 @@ h1 {
     height: 50px;
     width: 50px; }
 
-  #closeLightbox {
-    margin-right: -15%; }
-
+  /*#closeLightbox{
+    margin-right: -15%;
+  }*/
   #imageGallery .layout {
     padding: 5px;
     margin: 3px; }
@@ -578,7 +578,7 @@ h1 {
 
   #overlay p {
     width: 70%; } }
-@media (min-width: 320px) {
+@media (max-width: 320px) {
   /*#rightArrow {
 	margin-top: -129px;
 	margin-left: 68%;
