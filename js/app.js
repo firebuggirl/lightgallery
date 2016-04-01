@@ -125,22 +125,22 @@ $("#top").click(function(){
 
 $( "body" ).on( "click",'#rightArrow', function() {
 
-  var $activeImg = $(".selected");
-  var $captionText = $activeImg.closest('li').next().find('a').addClass('selected').children("img").attr("alt");
-  var $imageNext = $activeImg.closest('li').next('li').find('a').addClass('selected').attr("href");
+  var $activeImg = $(".selected");//create location for current image selected
+  var $captionText = $activeImg.closest('li').next().find('a').addClass('selected').children("img").attr("alt");//grab current image then navigate to the closest <li>, then move to the next <li> and find it's associated <a> and make it the currently selected anchor, then find the child img of the <a> tag and grab the caption text via the alt attribute
+  var $imageNext = $activeImg.closest('li').next('li').find('a').addClass('selected').attr("href");//same as above, but grab href instead to show the next photo
 
-  $activeImg.removeClass('selected');
+  $activeImg.removeClass('selected');//remove class of currently selected elements in order to transfer .selected class to next and prev elements
 
 
 
-  $image.attr("src", $imageNext);
+  $image.attr("src", $imageNext);//change location of "src" to be equal to next image
   $captionNext = $captionText;
-  $caption.text($captionNext);
+  $caption.text($captionNext);//get caption text of next image
 
   //console.log($imageNext);
   //console.log($activeImg);
-  console.log($captionText);
-  console.log($captionNext);
+  //console.log($captionText);
+  //console.log($captionNext);
 
 });
 
@@ -158,33 +158,39 @@ $( "body" ).on( "click",'#leftArrow', function() {
   //console.log($imagePrev);
   //console.log($activeImg);
   //console.log($imagePrev);
-  console.log($captionPrev);
+  //console.log($captionPrev);
 
 });
 
 
 
-//Keybaord navigation
-$(document).ready(function() {
-    $(document).keydown(function(key) {
-      var $activeImg = $(".selected");
-        switch(parseInt(key.which,10)) {
-			// Left arrow key pressed
-			case 37:
-				 $activeImg.parent().prev().children().attr("href");
-				break;
-			// Up Arrow Pressed
-			case 38:
-				 $activeImg.parent().prev().children().attr("href");
-				break;
-			// Right Arrow Pressed
-			case 39:
-				 $activeImg.parent().next().children().attr("href");
-				break;
-			// Down Arrow Pressed
-			case 40:
-				 $activeImg.parent().prev().children().attr("href");
-				break;
-      	}
-	});
+$(document).keydown(function(k) {
+
+  if(k.keyCode == 39){
+    var $activeImg = $(".selected");//create location for current image selected
+    var $captionText = $activeImg.closest('li').next().find('a').addClass('selected').children("img").attr("alt");//grab current image then navigate to the closest <li>, then move to the next <li> and find it's associated <a> and make it the currently selected anchor, then find the child img of the <a> tag and grab the caption text via the alt attribute
+    var $imageNext = $activeImg.closest('li').next('li').find('a').addClass('selected').attr("href");//same as above, but grab href instead to show the next photo
+
+    $activeImg.removeClass('selected');//remove class of currently selected elements in order to transfer .selected class to next and prev elements
+
+
+
+    $image.attr("src", $imageNext);//change location of "src" to be equal to next image
+    $captionNext = $captionText;
+    $caption.text($captionNext);//get caption text of next image
+
+  }
+});
+
+$(document).keydown(function(k) {
+  if(k.keyCode == 37){
+    var $activeImg = $(".selected");
+    var $captionText = $activeImg.closest('li').prev().find('a').addClass('selected').children("img").attr("alt");
+    var $imagePrev = $activeImg.closest('li').prev('li').find('a').addClass('selected').attr("href");
+    $activeImg.removeClass('selected');
+
+    $image.attr("src", $imagePrev);
+    $captionPrev = $captionText;
+    $caption.text($captionPrev);
+  }
 });

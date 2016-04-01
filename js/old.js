@@ -29,3 +29,29 @@ $('#leftArrow').click(function(){
   //console.log(activeImg);
 
 });
+
+
+//Keybaord navigation
+$(document).ready(function() {
+    $(document).keydown(function(key) {
+      var $activeImg = $(".selected");
+        switch(parseInt(key.which,10)) {
+			// Left arrow key pressed
+			case 37:
+				 $activeImg.parent().prev().children().attr("href");
+				break;
+			// Up Arrow Pressed
+			case 38:
+				 $activeImg.parent().prev().children().attr("href");
+				break;
+			// Right Arrow Pressed
+			case 39:
+				 $activeImg.parent().next().children().attr("href");
+				break;
+			// Down Arrow Pressed
+			case 40:
+				 $activeImg.parent().prev().children().attr("href");
+				break;
+      	}
+	});
+});
