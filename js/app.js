@@ -128,7 +128,10 @@ $( "body" ).on( "click",'#rightArrow', function() {
   var $activeImg = $(".selected");
   var $captionText = $(".selected").children("img").attr("alt");
   var $imageNext = $activeImg.closest('li').next('li').find('a').addClass('selected').attr("href");
+
   $activeImg.removeClass('selected');
+
+
 
   $image.attr("src", $imageNext);
   $captionNext = $captionText;
