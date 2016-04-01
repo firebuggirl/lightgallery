@@ -126,7 +126,7 @@ $("#top").click(function(){
 $( "body" ).on( "click",'#rightArrow', function() {
 
   var $activeImg = $(".selected");
-  var $captionText = $(".selected").children("img").attr("alt");
+  var $captionText = $activeImg.closest('li').next().find('a').addClass('selected').children("img").attr("alt");
   var $imageNext = $activeImg.closest('li').next('li').find('a').addClass('selected').attr("href");
 
   $activeImg.removeClass('selected');
@@ -137,8 +137,8 @@ $( "body" ).on( "click",'#rightArrow', function() {
   $captionNext = $captionText;
   $caption.text($captionNext);
 
-  console.log($imageNext);
-  console.log($activeImg);
+  //console.log($imageNext);
+  //console.log($activeImg);
   console.log($captionText);
   console.log($captionNext);
 
@@ -147,7 +147,7 @@ $( "body" ).on( "click",'#rightArrow', function() {
 $( "body" ).on( "click",'#leftArrow', function() {
 
   var $activeImg = $(".selected");
-  var $captionText = $(".selected").children("img").attr("alt");
+  var $captionText = $activeImg.closest('li').prev().find('a').addClass('selected').children("img").attr("alt");
   var $imagePrev = $activeImg.closest('li').prev('li').find('a').addClass('selected').attr("href");
   $activeImg.removeClass('selected');
 
@@ -155,9 +155,9 @@ $( "body" ).on( "click",'#leftArrow', function() {
   $captionPrev = $captionText;
   $caption.text($captionPrev);
 
-  console.log($imagePrev);
-  console.log($activeImg);
-  console.log($imagePrev);
+  //console.log($imagePrev);
+  //console.log($activeImg);
+  //console.log($imagePrev);
   console.log($captionPrev);
 
 });

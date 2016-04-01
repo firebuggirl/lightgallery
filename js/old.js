@@ -8,9 +8,9 @@ $('#rightArrow').click(function(){
   $captionNext = $captionText;
   $caption.text($captionNext);//get caption text of prev image
   //$activeImg = $activeImg.next();//get next image
-  console.log(imageNext);
-  console.log(activeImg);
-  console.log(captionText);
+  //console.log(imageNext);
+//  console.log(activeImg);
+//  console.log(captionText);
   console.log(captionNext);
 
 });
@@ -25,7 +25,7 @@ $('#leftArrow').click(function(){
   $captionPrev = $captionText;
   $caption.text($captionPrev);//get caption text of prev image
   //$activePhoto = $activeImg.prev();//get previous image
-  console.log(imagePrev);
-  console.log(activeImg);
+  //console.log(imagePrev);
+  //console.log(activeImg);
 
 });
