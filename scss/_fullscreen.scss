@@ -119,6 +119,7 @@ a:hover {
 #imageGallery .layout img:hover{
   -webkit-transform: scale3d(1.1, 1.1, 1.1);
   transform: scale3d(1.1, 1.1, 1.1);
+  z-index: 10 /*so top row does not get cut off by #top div*/
 
 }
 

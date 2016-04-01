@@ -456,7 +456,8 @@ a:hover {
 
 #imageGallery .layout img:hover {
   -webkit-transform: scale3d(1.1, 1.1, 1.1);
-  transform: scale3d(1.1, 1.1, 1.1); }
+  transform: scale3d(1.1, 1.1, 1.1);
+  z-index: 10; }
 
 #firebug {
   -webkit-transition: -webkit-transform 0.15s ease 0s;
