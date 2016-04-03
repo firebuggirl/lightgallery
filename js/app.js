@@ -65,6 +65,14 @@ $("#imageGallery a").click(function(event){
   var imageLocation = $(this).addClass("selected").attr("href");
 
   var videoLocation = $(this).addClass("selected").attr("href");
+
+  $image.on( "mouseover", function() {
+   $(this).css( "border-color", "red");
+   });
+
+$image.on( "mouseout", function() {
+$(this).css( "border-color", "");
+});
   //Update overlay with the image linked in the link
   $image.attr("src", imageLocation);
 
@@ -73,6 +81,8 @@ $("#imageGallery a").click(function(event){
 
   //Show the overlay.
   $overlay.show();
+
+  //$iframe.show();
 
   //show arrows div
   $(".arrows").show();
@@ -101,6 +111,8 @@ $overlay.click(function(){
 
   $(".arrows").hide();
 
+  $("iframe").hide();
+
   //$("#leftArrow").hide();
 
 //  $("#rightArrow").hide();
@@ -118,6 +130,26 @@ $image.before($closeLightbox);
 $("#top").click(function(){
 
   $overlay.hide();
+});
+
+$("#rightArrow").on( "mouseover", function() {
+$(this).css( "width", "+=8" );
+$(this).css( "background-color", "red" );
+});
+
+$("#rightArrow").on( "mouseout", function() {
+$(this).css( "width", "-=8" );
+$(this).css( "background-color", "" );
+});
+
+$("#leftArrow").on( "mouseover", function() {
+$(this).css( "width", "+=8" );
+$(this).css( "background-color", "red" );
+});
+
+$("#leftArrow").on( "mouseout", function() {
+$(this).css( "width", "-=8" );
+$(this).css( "background-color", "" );
 });
 
 
@@ -162,6 +194,11 @@ $( "body" ).on( "click",'#leftArrow', function() {
 
 });
 
+//$('#firebug').click(function() {
+//$('iframe').show();
+//$('#iframe').append('');
+
+//});
 
 
 $(document).keydown(function(k) {

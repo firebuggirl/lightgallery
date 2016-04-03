@@ -46,29 +46,28 @@ input[type="search"]{
   margin-top: calc(65% + 30px);
 }
 .arrows{
-  margin-top: calc(78% + 30px);
+  margin-top: calc(82% + 30px);
 
 }
-.leftArrow{
-  height: 50px;
-  width: 50px;
+#leftArrow{
+  height: 40px;
+  width: 40px;
+  margin-left: -20%;
 }
-.rightArrow{
-  height: 50px;
-  width: 50px;
+#rightArrow{
+  height: 40px;
+  width: 40px;
+  margin-right: -20%;
 }
-
-
 #imageGallery .layout {
 	padding: 5px;
 	margin: 3px;
 }
 .galleryDiv{
   padding-top: 100px;
-
 }
 input[type="search"]{
-  width: calc(40% + 65px);
+  width: calc(40% + 90px);
 }
 
 #overlay p{
@@ -81,16 +80,16 @@ input[type="search"]{
   margin-top: calc(65% + 30px);
 }
 .arrows{
-  margin-top: calc(78% + 30px);
+  margin-top: calc(82% + 30px);
 }
-.leftArrow{
-  height: 45px;
-  width: 45px;
-  margin-left: -19%;
+#leftArrow{
+  height: 40px;
+  width: 40px;
+  margin-left: -21%;
 }
-.rightArrow{
-  height: 45px;
-  width: 45px;
-  margin-right: -19%;
+#rightArrow{
+  height: 40px;
+  width: 40px;
+  margin-right: -21%;
 }
 }
