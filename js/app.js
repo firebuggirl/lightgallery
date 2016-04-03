@@ -67,12 +67,12 @@ $("#imageGallery a").click(function(event){
   var videoLocation = $(this).addClass("selected").attr("href");
 
   $image.on( "mouseover", function() {
-   $(this).css( "border-color", "red");
+   $(this).css( "border-color", "#FCAD0D");
    });
 
-$image.on( "mouseout", function() {
-$(this).css( "border-color", "");
-});
+  $image.on( "mouseout", function() {
+  $(this).css( "border-color", "");
+  });
   //Update overlay with the image linked in the link
   $image.attr("src", imageLocation);
 
@@ -134,7 +134,7 @@ $("#top").click(function(){
 
 $("#rightArrow").on( "mouseover", function() {
 $(this).css( "width", "+=8" );
-$(this).css( "background-color", "red" );
+$(this).css( "background-color", "#FCAD0D" );
 });
 
 $("#rightArrow").on( "mouseout", function() {
@@ -144,15 +144,13 @@ $(this).css( "background-color", "" );
 
 $("#leftArrow").on( "mouseover", function() {
 $(this).css( "width", "+=8" );
-$(this).css( "background-color", "red" );
+$(this).css( "background-color", "#FCAD0D" );
 });
 
 $("#leftArrow").on( "mouseout", function() {
 $(this).css( "width", "-=8" );
 $(this).css( "background-color", "" );
 });
-
-
 
 
 $( "body" ).on( "click",'#rightArrow', function() {
