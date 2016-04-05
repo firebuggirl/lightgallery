@@ -503,6 +503,9 @@ h1 {
   border: 3px solid #ECDDBE;
   margin-top: calc(10% + 30px); }
 
+.video:hover {
+  border: 3px solid red; }
+
 #overlay p {
   color: #ECDDBE;
   width: 30%;
@@ -516,6 +519,9 @@ h1 {
   overflow: hidden;
   padding-top: 20px;
   margin-top: 150px; }
+
+.hidden {
+  display: none; }
 
 @media (max-width: 1040px) {
   input[type="search"] {

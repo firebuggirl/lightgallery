@@ -168,11 +168,18 @@ h1{
   text-align:center;
 }
 
-#overlay img {
+#overlay img{
  width: 50%;
  border: 3px solid $beige;
  margin-top: calc(10% + 30px);
 
+}
+
+.video {
+
+}
+.video:hover{
+  border: 3px solid red;
 }
 #overlay p {
  color: $beige;
@@ -191,4 +198,7 @@ h1{
   overflow: hidden;
   padding-top: 20px;
   margin-top: 150px;
+}
+.hidden{
+  display: none;
 }
