@@ -74,7 +74,7 @@ $("#imageGallery a").click(function (event) {
         $image.addClass('hidden');//hide thumbnail image
         $caption.addClass('hidden');//hide caption text
         var videoURL = $(this).data('video-url');//establish a connection with the url for the video
-        var $video = ('<iframe class="video"  src="'+videoURL+'" frameborder="0" allowfullscreen></iframe>');//create div for video and include videoURL variable to show video
+        var $video = ('<iframe class="video" width="730" height="515" src="'+videoURL+'" frameborder="0" allowfullscreen></iframe>');//create div for video and include videoURL variable to show video
         $overlay.append($video);
     }
     else {
@@ -190,7 +190,7 @@ function setImageWhenArrowsClick($imageLink, $imageSrc, $captionText) {
         $image.addClass('hidden');//hide images from overlay and show video only
         $caption.addClass('hidden');//hide caption text for images from overlay when vidio <a> -> thumbnail is clicked
         var videoURL = $imageLink.data('video-url');//locate the url that is associated with the video data type in gallery list
-        var $video = ('<div class="video"><iframe width="760" height="500" style="margin-top: calc(10% + 20px); border: 3px solid beige;" src="'+videoURL+'" frameborder="0" allowfullscreen></iframe></div>');
+        var $video = ('<iframe class="video" width="760" height="500" style="margin-top: calc(10% + 20px); border: 3px solid beige;" src="'+videoURL+'" frameborder="0" allowfullscreen></iframe>');
         $overlay.append($video);//append the video to the overlay
     }
     else {//unhide images, caption text, and image src location
