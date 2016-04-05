@@ -45,10 +45,7 @@ input[type="search"]{
     width: calc(70% - 80px);
   }
 }
-/*iPhone 6*/
-@media (max-width: 375px){
 
-}
 @media(max-width:360px){
 	#overlay img {
 	width:70%;
@@ -73,7 +70,7 @@ input[type="search"]{
 	margin: 3px;
 }
 .galleryDiv{
-  padding-top: 100px;
+  padding-top: 20px;
 }
 input[type="search"]{
   width: calc(40% + 90px);
