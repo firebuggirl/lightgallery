@@ -74,7 +74,7 @@ $("#imageGallery a").click(function (event) {
         $image.addClass('hidden');//hide thumbnail image
         $caption.addClass('hidden');//hide caption text
         var videoURL = $(this).data('video-url');//establish a connection with the url for the video
-        var $video = ('<iframe class="video" width="730" height="515" src="'+videoURL+'" frameborder="0" allowfullscreen></iframe>');//create div for video and include videoURL variable to show video
+        var $video = ('<iframe class="video"  src="'+videoURL+'" frameborder="0" allowfullscreen></iframe>');//create div for video and include videoURL variable to show video
         $overlay.append($video);
     }
     else {
