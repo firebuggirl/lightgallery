@@ -176,10 +176,14 @@ h1{
 }
 
 .video {
+ border: 3px solid white;
+ margin-top: calc(10% + 30px);
+ width: 730px;
+ height: 515px;
 
 }
 .video:hover{
-  border: 3px solid red;
+  border: 3px solid $mustard;
 }
 #overlay p {
  color: $beige;

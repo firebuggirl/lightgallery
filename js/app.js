@@ -67,20 +67,14 @@ $("#imageGallery a").click(function (event) {
         $(this).css("border-color", "");
     });
 
-    $iframe.on("mouseover", function () {//hover style for image in overlay
-        $(this).css("border-color", "#FCAD0D");
-    });
 
-    $iframe.on("mouseout", function () {//get rid of hover style in overlay
-        $(this).css("border-color", "");
-    });
     //Update overlay with the image linked in the link
     $('.video').remove();
     if($(this).data('type') == 'video') {//check to see if the href clicked is the video
         $image.addClass('hidden');//hide thumbnail image
         $caption.addClass('hidden');//hide caption text
         var videoURL = $(this).data('video-url');//establish a connection with the url for the video
-        var $video = ('<iframe class="video" width="630" height="415" style="margin-top: calc(10% + 30px); border: 3px solid beige;" src="'+videoURL+'" frameborder="0" allowfullscreen></iframe>');//create div for video and include videoURL variable to show video
+        var $video = ('<iframe class="video"  src="'+videoURL+'" frameborder="0" allowfullscreen></iframe>');//create div for video and include videoURL variable to show video
         $overlay.append($video);
     }
     else {

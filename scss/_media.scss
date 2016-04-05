@@ -5,6 +5,10 @@ input[type="search"]{
 
 
 }
+.video{
+  width: 410px;
+  height: 305px;
+}
 }
 
 
@@ -26,6 +30,11 @@ margin-left: -25%;
 input[type="search"]{
   width: calc(70% - 120px);
 
+}
+
+.video{
+  width: 410px;
+  height: 305px;
 }
 
 
@@ -73,6 +82,11 @@ input[type="search"]{
 #overlay p{
   width: 70%;
 }
+.video{
+  width:220px;
+  height:200px;
+  margin-top: calc(62% + 30px);
+}
 }
 @media(max-width: 320px){
 
@@ -91,5 +105,10 @@ input[type="search"]{
   height: 40px;
   width: 40px;
   margin-right: -21%;
+}
+.video{
+  width:220px;
+  height:200px;
+  margin-top: calc(58% + 30px);
 }
 }
