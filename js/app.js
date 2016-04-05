@@ -1,13 +1,13 @@
 $("#search").keyup(function () {
-    var search = $(this).val();
+    var search = $(this).val();//get value of user input
     console.log(search);
     $(".galleryDiv img").each(function () {
-        console.log($(this).attr("alt").search);
-        var searchAttr = $(this).attr("alt");
-        if (searchAttr.toLowerCase().search(search.toLowerCase()) > -1) {
-            $(this).show();
+        console.log($(this).attr("alt").search);//check to see if user input is being correctly output to the console
+        var searchAttr = $(this).attr("alt");//create variable to represent caption text of image(s) being sought out
+        if (searchAttr.toLowerCase().search(search.toLowerCase()) > -1) {//grab and search for caption text of images that are above index of -1 and convert input to lower case text
+            $(this).show();//show image being searched for
         } else {
-            $(this).fadeOut();
+            $(this).fadeOut();//don't show image
         }
     });
 });
