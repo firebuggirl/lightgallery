@@ -5,9 +5,9 @@ $("#search").keyup(function () {
         console.log($(this).attr("alt").search);//check to see if user input is being correctly output to the console
         var searchAttr = $(this).attr("alt");//create variable to represent caption text of image(s) being sought out
         if (searchAttr.toLowerCase().search(search.toLowerCase()) > -1) {//grab and search for caption text of images that are above index of -1 and convert input to lower case text
-            $(this).show();//show image being searched for
+            $(this).show();//show/select image being searched for
         } else {
-            $(this).fadeOut();//don't show image
+            $(this).fadeOut();//hide unselected images
         }
     });
 });
@@ -68,12 +68,12 @@ $("#imageGallery a").click(function (event) {
     });
 
 
-    //Update overlay with the image linked in the link
+    //Update overlay with the image linked
     $('.video').remove();
     if($(this).data('type') == 'video') {//check to see if the href clicked is the video
         $image.addClass('hidden');//hide thumbnail image
         $caption.addClass('hidden');//hide caption text
-        var videoURL = $(this).data('video-url');//establish a connection with the url for the video
+        var videoURL = $(this).data('video-url');//establish a connection with the url for the video that is provided in the html <a> tag
         var $video = ('<iframe class="video"  src="'+videoURL+'" frameborder="0" allowfullscreen></iframe>');//create div for video and include videoURL variable to show video
         $overlay.append($video);
     }
@@ -103,12 +103,16 @@ $("#imageGallery a").click(function (event) {
 });
 
 
-    //When overlay is clicked
-    $overlay.click(function () {
-    //Hide the overlay
-    $overlay.hide();
+//When close button is clicked
 
-    //Show fixed scroll bar with z-index
+var $closeLightbox = $("<div id='closeLightbox'></div>");//create div for close button and style in css
+
+$image.before($closeLightbox);//tell DOM where close button fits in the DOM sturcture of the overlay
+
+$("#closeLightbox").click(function () {
+
+    $overlay.hide();//close the overlay
+
     $("#top").show();//bring back search bar when overlay is hidden
 
    //hide arrows
@@ -116,17 +120,6 @@ $("#imageGallery a").click(function (event) {
 
   //remove video when overlay is hidden
     $overlay.remove('.video');
-
-
-});
-
-var $closeLightbox = $("<div id='closeLightbox'></div>");//create div for close button and style in css
-
-$image.before($closeLightbox);//tell DOM where close button fits in the DOM sturcture of the overlay
-
-$("#top").click(function () {
-
-    $overlay.hide();//close the overlay
 });
 
 //style arows on hover, then remove new styles on mouseout
@@ -214,11 +207,14 @@ $(document).keydown(function (k) {
 
 
         $image.attr("src", $imageNext);//change location of "src" to be equal to next image
-        $captionNext = $captionText;
+        $captionNext = $captionText;//change value of caption text to be equal to the next caption
         $caption.text($captionNext);//get caption text of next image
 
     }
 });
+
+
+
 
 $(document).keydown(function (k) {
     if (k.keyCode == 37) {
