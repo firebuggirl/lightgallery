@@ -5,7 +5,7 @@ $("#search").keyup(function () {
         console.log($(this).attr("alt").search);//check to see if user input is being correctly output to the console
         var searchAttr = $(this).attr("alt");//create variable to represent caption text of image(s) being sought out
         if (searchAttr.toLowerCase().search(search.toLowerCase()) > -1) {//grab and search for caption text of images that are above index of -1 and convert input to lower case text
-            $(this).show();//show/select image being searched for
+            $(this).addClass("mediaquery").show();//show/select image being searched for
         } else {
             $(this).fadeOut();//hide unselected images
         }
@@ -41,7 +41,6 @@ $overlay.append($image);
 //A caption to overlay
 $overlay.append($caption);
 
-//$overlay.append($arrows);
 
 //add video to overlay
 $overlay.append($iframe);
@@ -59,13 +58,6 @@ $("#imageGallery a").click(function (event) {
     //ditto for video....same as above
     var videoLocation = $(this).addClass("selected").attr("href");
 
-    $image.on("mouseover", function () {//hover style for image in overlay
-        $(this).css("border-color", "#FCAD0D");
-    });
-
-    $image.on("mouseout", function () {//get rid of hover style in overlay
-        $(this).css("border-color", "");
-    });
 
 
     //Update overlay with the image linked
@@ -122,60 +114,38 @@ $("#closeLightbox").click(function () {
     $overlay.remove('.video');
 });
 
-//style arows on hover, then remove new styles on mouseout
-$("#rightArrow").on("mouseover", function () {
-    $(this).css("width", "+=8");//expand width of rightArrow slightly for hover effect
-    $(this).css("background-color", "#FCAD0D");//change color on hover
-});
 
-$("#rightArrow").on("mouseout", function () {
-    $(this).css("width", "-=8");
-    $(this).css("background-color", "");
-});
+function prevImage(){
+  var $activeImg = $(".selected");
+  var $previous = $activeImg.closest('li').prev().find('a');
+  if($activeImg.closest('li').hasClass('first')) {
+      $previous = $('.last').find('a');
+  }
+  var $captionText = $previous.addClass('selected').children("img").attr("alt");
+  //var $imagePrev = $activeImg.closest('li').prev('li').find('a').addClass('selected').attr("href");
+  var $imagePrev = $previous.addClass('selected').attr("href");
+  $activeImg.removeClass('selected');
 
-$("#leftArrow").on("mouseover", function () {
-    $(this).css("width", "+=8");
-    $(this).css("background-color", "#FCAD0D");
-});
+  setImageWhenArrowsClick($previous, $imagePrev, $captionText);
+}
 
-$("#leftArrow").on("mouseout", function () {
-    $(this).css("width", "-=8");
-    $(this).css("background-color", "");
-});
+function nextImage(){
+  var $activeImg = $(".selected");//create location for current image selected by assigning .selected class (established above) to variable within function @ the local scope
+  var $next = $activeImg.closest('li').next();//find the closest <li> tag of the active image and select the next image in the gallery
+  if($activeImg.closest('li').hasClass('last')) {//if last item in gallery is chosen, assign .first class to $next variable to return to 1st image in gallery
+      $next = $('.first');
+  }
+  var $captionText = $next.find('a').addClass('selected').children("img").attr("alt");//grab current image then navigate to the closest <li>, then move to the next <li> and find it's associated <a> and make it the currently selected anchor, then find the child img of the <a> tag and grab the caption text via the alt attribute
+  var $imageNext = $next.find('a').addClass('selected').attr("href");//same as above, but grab href instead to show the next photo
+  var $imageNextLink = $next.find('a');//locate next image href attribute
 
+  $activeImg.removeClass('selected');//remove class of currently selected elements in order to transfer .selected class to next and prev elements
+  setImageWhenArrowsClick($imageNextLink, $imageNext, $captionText);//establish link, image and caption text all in one location
 
-$("body").on("click", '#rightArrow', function () {//creat anonymous function when clicking on rightArrow on body
+}
 
-    var $activeImg = $(".selected");//create location for current image selected by assigning .selected class (established above) to variable within function @ the local scope
-    var $next = $activeImg.closest('li').next();//find the closest <li> tag of the active image and select the next image in the gallery
-    if($activeImg.closest('li').hasClass('last')) {//if last item in gallery is chosen, assign .first class to $next variable to return to 1st image in gallery
-        $next = $('.first');
-    }
-    var $captionText = $next.find('a').addClass('selected').children("img").attr("alt");//grab current image then navigate to the closest <li>, then move to the next <li> and find it's associated <a> and make it the currently selected anchor, then find the child img of the <a> tag and grab the caption text via the alt attribute
-    var $imageNext = $next.find('a').addClass('selected').attr("href");//same as above, but grab href instead to show the next photo
-    var $imageNextLink = $next.find('a');//locate next image href attribute
-
-    $activeImg.removeClass('selected');//remove class of currently selected elements in order to transfer .selected class to next and prev elements
-    setImageWhenArrowsClick($imageNextLink, $imageNext, $captionText);//establish link, image and caption text all in one location
-
-});
-
-$("body").on("click", '#leftArrow', function () {//creat anonymous function when clicking on leftArrow on body
-
-    var $activeImg = $(".selected");
-    var $previous = $activeImg.closest('li').prev().find('a');
-    if($activeImg.closest('li').hasClass('first')) {
-        $previous = $('.last').find('a');
-    }
-    var $captionText = $previous.addClass('selected').children("img").attr("alt");
-    //var $imagePrev = $activeImg.closest('li').prev('li').find('a').addClass('selected').attr("href");
-    var $imagePrev = $previous.addClass('selected').attr("href");
-    $activeImg.removeClass('selected');
-
-    setImageWhenArrowsClick($previous, $imagePrev, $captionText);
-
-
-});
+$("body").on("click", '#leftArrow', prevImage);
+$("body").on("click", '#rightArrow', nextImage);
 
 function setImageWhenArrowsClick($imageLink, $imageSrc, $captionText) {
     $('.video').remove();//remove video from overlay
@@ -184,7 +154,8 @@ function setImageWhenArrowsClick($imageLink, $imageSrc, $captionText) {
         $caption.addClass('hidden');//hide caption text for images from overlay when vidio <a> -> thumbnail is clicked
         var videoURL = $imageLink.data('video-url');//locate the url that is associated with the video data type in gallery list
         var $video = ('<iframe src="'+videoURL+'" frameborder="0" allowfullscreen></iframe>');
-        $overlay.append($video);//append the video to the overlay
+        //$overlay.append($video);//append the video to the overlay
+        $(".video").append();
     }
     else {//unhide images, caption text, and image src location
         $image.removeClass('hidden');
@@ -196,39 +167,10 @@ function setImageWhenArrowsClick($imageLink, $imageSrc, $captionText) {
 }
 
 
-$(document).keydown(function (k) {
-
-    if (k.keyCode == 39) {
-      var $activeImg = $(".selected");//create location for current image selected by assigning .selected class (established above) to variable within function @ the local scope
-      var $next = $activeImg.closest('li').next();//find the closest <li> tag of the active image and select the next image in the gallery
-      if($activeImg.closest('li').hasClass('last')) {//if last item in gallery is chosen, assign .first class to $next variable to return to 1st image in gallery
-          $next = $('.first');
-      }
-      var $captionText = $next.find('a').addClass('selected').children("img").attr("alt");//grab current image then navigate to the closest <li>, then move to the next <li> and find it's associated <a> and make it the currently selected anchor, then find the child img of the <a> tag and grab the caption text via the alt attribute
-      var $imageNext = $next.find('a').addClass('selected').attr("href");//same as above, but grab href instead to show the next photo
-      var $imageNextLink = $next.find('a');//locate next image href attribute
-
-      $activeImg.removeClass('selected');//remove class of currently selected elements in order to transfer .selected class to next and prev elements
-      setImageWhenArrowsClick($imageNextLink, $imageNext, $captionText);//establish link, image and caption text all in one location
-
-    }
-});
-
-
-
-
-$(document).keydown(function (k) {
-    if (k.keyCode == 37) {
-      var $activeImg = $(".selected");
-      var $previous = $activeImg.closest('li').prev().find('a');
-      if($activeImg.closest('li').hasClass('first')) {
-          $previous = $('.last').find('a');
-      }
-      var $captionText = $previous.addClass('selected').children("img").attr("alt");
-      //var $imagePrev = $activeImg.closest('li').prev('li').find('a').addClass('selected').attr("href");
-      var $imagePrev = $previous.addClass('selected').attr("href");
-      $activeImg.removeClass('selected');
-
-      setImageWhenArrowsClick($previous, $imagePrev, $captionText);
-    }
+$(document).on('keydown', function(event) {//use .on() instead of .bind()
+	if(event.keyCode == 37) {
+		prevImage(true);
+	} else if(event.keyCode == 39) {
+		nextImage();
+	}
 });

@@ -36,12 +36,20 @@
   margin-left: -10%;
   background-color: $beige;
   border-radius: 50%;
+   &:hover{
+     transform: scale(1.2);
+     background-color: #FCAD0D;
+   }
 }
 
 #rightArrow{
   margin-right: -10%;
   background-color: $beige;
   border-radius: 50%;
+    &:hover{
+      transform: scale(1.2);
+      background-color: #FCAD0D;
+    }
 }
 
 
@@ -130,12 +138,13 @@ a:hover {
   transition: transform 0.15s ease 0s;
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1);
+    &:hover{
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
 }
 
-#firebug:hover{
-  -webkit-transform: scale3d(1.1, 1.1, 1.1);
-  transform: scale3d(1.1, 1.1, 1.1);
-}
+
 
 
 #closeLightbox {
@@ -174,26 +183,28 @@ h1{
  margin-top: calc(10% + 30px);
 
 }
+ #overlay img:hover{
+   border-color: #FCAD0D;
+ }
 
 .video {
  border: 3px solid white;
  margin-top: calc(10% + 30px);
  width: 730px;
  height: 515px;
+   &:hover{
+   border: 3px solid $mustard;
+ }
 
 }
-.video:hover{
-  border: 3px solid $mustard;
-}
+
 #overlay p {
  color: $beige;
  width: 30%;
  margin: 15px auto;
  font-family: overlock;
 
-
 }
-
 
 .galleryDiv{
   text-align: center;
@@ -205,4 +216,10 @@ h1{
 }
 .hidden{
   display: none;
+}
+
+.mediaquery{
+  margin: 0 auto;
+  display: block;
+
 }

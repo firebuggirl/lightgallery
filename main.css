@@ -388,11 +388,17 @@ th {
   margin-left: -10%;
   background-color: #ECDDBE;
   border-radius: 50%; }
+  #leftArrow:hover {
+    transform: scale(1.2);
+    background-color: #FCAD0D; }
 
 #rightArrow {
   margin-right: -10%;
   background-color: #ECDDBE;
   border-radius: 50%; }
+  #rightArrow:hover {
+    transform: scale(1.2);
+    background-color: #FCAD0D; }
 
 body {
   margin: 0;
@@ -466,10 +472,9 @@ a:hover {
   transition: transform 0.15s ease 0s;
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1); }
-
-#firebug:hover {
-  -webkit-transform: scale3d(1.1, 1.1, 1.1);
-  transform: scale3d(1.1, 1.1, 1.1); }
+  #firebug:hover {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1); }
 
 #closeLightbox {
   right: 0;
@@ -503,14 +508,16 @@ h1 {
   border: 3px solid #ECDDBE;
   margin-top: calc(10% + 30px); }
 
+#overlay img:hover {
+  border-color: #FCAD0D; }
+
 .video {
   border: 3px solid white;
   margin-top: calc(10% + 30px);
   width: 730px;
   height: 515px; }
-
-.video:hover {
-  border: 3px solid #FCAD0D; }
+  .video:hover {
+    border: 3px solid #FCAD0D; }
 
 #overlay p {
   color: #ECDDBE;
@@ -528,6 +535,10 @@ h1 {
 
 .hidden {
   display: none; }
+
+.mediaquery {
+  margin: 0 auto;
+  display: block; }
 
 @media (max-width: 1040px) {
   input[type="search"] {
