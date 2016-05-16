@@ -122,7 +122,6 @@ function prevImage(){
       $previous = $('.last').find('a');
   }
   var $captionText = $previous.addClass('selected').children("img").attr("alt");
-  //var $imagePrev = $activeImg.closest('li').prev('li').find('a').addClass('selected').attr("href");
   var $imagePrev = $previous.addClass('selected').attr("href");
   $activeImg.removeClass('selected');
 
@@ -147,15 +146,18 @@ function nextImage(){
 $("body").on("click", '#leftArrow', prevImage);
 $("body").on("click", '#rightArrow', nextImage);
 
+
+
 function setImageWhenArrowsClick($imageLink, $imageSrc, $captionText) {
     $('.video').remove();//remove video from overlay
-    if($imageLink.data('type') == 'video') {//show video if date type = video
+
+     if($imageLink.data('type') == 'video') {//show video if date type = video
         $image.addClass('hidden');//hide images from overlay and show video only
         $caption.addClass('hidden');//hide caption text for images from overlay when vidio <a> -> thumbnail is clicked
-        var videoURL = $imageLink.data('video-url');//locate the url that is associated with the video data type in gallery list
-        var $video = ('<iframe src="'+videoURL+'" frameborder="0" allowfullscreen></iframe>');
-        //$overlay.append($video);//append the video to the overlay
-        $(".video").append();
+        //var videoLocation = $(this).addClass("selected").attr("href");
+        //var videoURL = $(this).data('video-url');//establish a connection with the url for the video that is provided in the html <a> tag note: works with $("#imageGallery a").click function, but not with arrows function
+        var $video = ('<iframe class="video"  src="https://www.youtube.com/embed/mDjs1lb4c3E" frameborder="0" allowfullscreen></iframe>');
+        $overlay.append($video);
     }
     else {//unhide images, caption text, and image src location
         $image.removeClass('hidden');
@@ -163,8 +165,10 @@ function setImageWhenArrowsClick($imageLink, $imageSrc, $captionText) {
         $image.attr("src", $imageSrc);
         $captionNext = $captionText;
         $caption.text($captionNext);
+
     }
 }
+
 
 
 $(document).on('keydown', function(event) {//use .on() instead of .bind()
