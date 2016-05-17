@@ -178,7 +178,7 @@ h1{
 }
 
 #overlay img{
- width: 50%;
+/* width: 50%;*/
  border: 3px solid $beige;
  margin-top: calc(10% + 30px);
 
@@ -190,13 +190,41 @@ h1{
 .video {
  border: 3px solid white;
  margin-top: calc(10% + 30px);
- width: 730px;
- height: 515px;
+ /*width: 730px;
+ height: 515px;*/
    &:hover{
    border: 3px solid $mustard;
  }
 
 }
+
+@media (orientation: landscape) {
+	/* if landscape, make sure the height is adjusted */
+
+	#overlay img {
+		height: 68vh;
+	}
+
+	/*.video {
+		width: 65vw;
+    	height: 36.5625vw;
+	}*/
+}
+
+@media (orientation: portrait) {
+	/* if portrait, make sure the width is adjusted */
+
+	#overlay img {
+		width: 100vw;
+		height: auto;
+	}
+
+	/*.video {
+		width: 60vw;
+	  	height: 56.25vw;
+	}*/
+}
+
 
 #overlay p {
  color: $beige;
